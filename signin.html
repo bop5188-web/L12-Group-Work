@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="storefrontApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storefront - Sign In</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Storefront</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="home.html">Home</a>
+                <a class="nav-link active" href="signin.html">Sign In</a>
+                <a class="nav-link" href="index.html">Products</a>
+                <a class="nav-link" href="cart.html">Cart</a>
+                <a class="nav-link" href="checkout.html">Checkout</a>
+                <a class="nav-link" href="returns.html">Returns</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center mb-4">Sign In</h2>
+                        
+                        <div ng-controller="SignInController">
+                            <form ng-submit="signIn()">
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" ng-model="credentials.email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" ng-model="credentials.password" required>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="remember" ng-model="remember">
+                                    <label class="form-check-label" for="remember">Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                            </form>
+                            
+                            <div ng-if="signInSuccess" class="alert alert-success mt-3">
+                                Sign in successful! Redirecting...
+                            </div>
+                            
+                            <div ng-if="signInError" class="alert alert-danger mt-3">
+                                {{ signInError }}
+                            </div>
+                            
+                            <hr class="my-4">
+                            <p class="text-center mb-0">
+                                Don't have an account? 
+                                <a href="home.html">Continue as guest</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

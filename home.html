@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="storefrontApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storefront - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Storefront</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="home.html">Home</a>
+                <a class="nav-link" href="signin.html">Sign In</a>
+                <a class="nav-link" href="index.html">Products</a>
+                <a class="nav-link" href="cart.html">Cart</a>
+                <a class="nav-link" href="checkout.html">Checkout</a>
+                <a class="nav-link" href="returns.html">Returns</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="jumbotron bg-light p-5 rounded">
+            <h1 class="display-4">Welcome to Storefront</h1>
+            <p class="lead">Your one-stop shop for electronics and more.</p>
+            <hr class="my-4">
+            <p>Browse our products, add items to your cart, and checkout securely.</p>
+            <a class="btn btn-primary btn-lg" href="index.html" role="button">Shop Now</a>
+            <a class="btn btn-outline-secondary btn-lg" href="signin.html" role="button">Sign In</a>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">🛍️ Products</h5>
+                        <p class="card-text">Browse our wide selection of products</p>
+                        <a href="index.html" class="btn btn-primary">View Products</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">🛒 Shopping Cart</h5>
+                        <p class="card-text">View items in your cart</p>
+                        <a href="cart.html" class="btn btn-primary">View Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">↩️ Returns</h5>
+                        <p class="card-text">Submit a return request</p>
+                        <a href="returns.html" class="btn btn-primary">Returns</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

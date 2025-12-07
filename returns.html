@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="storefrontApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storefront - Returns</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Storefront</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="home.html">Home</a>
+                <a class="nav-link" href="signin.html">Sign In</a>
+                <a class="nav-link" href="index.html">Products</a>
+                <a class="nav-link" href="cart.html">Cart</a>
+                <a class="nav-link" href="checkout.html">Checkout</a>
+                <a class="nav-link active" href="returns.html">Returns</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4" ng-controller="ReturnController">
+        <h1 class="mb-4">Return Request</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form ng-submit="submitReturn()">
+                    <div class="mb-3">
+                        <label class="form-label">Order Number</label>
+                        <input type="text" class="form-control" ng-model="returnData.orderNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" class="form-control" ng-model="returnData.productName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Reason for Return</label>
+                        <select class="form-control" ng-model="returnData.reason" required>
+                            <option value="">Select a reason</option>
+                            <option value="Defective">Defective</option>
+                            <option value="Wrong Item">Wrong Item</option>
+                            <option value="Not as Described">Not as Described</option>
+                            <option value="Changed Mind">Changed Mind</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" ng-model="returnData.description" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Return Request</button>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Previous Returns</h3>
+                <div ng-if="returns.length === 0" class="alert alert-info">
+                    No return requests found.
+                </div>
+                <div ng-repeat="returnItem in returns" class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Order: {{ returnItem.orderNumber }}</h5>
+                        <p class="card-text"><strong>Product:</strong> {{ returnItem.productName }}</p>
+                        <p class="card-text"><strong>Reason:</strong> {{ returnItem.reason }}</p>
+                        <p class="card-text"><strong>Status:</strong> {{ returnItem.status }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
