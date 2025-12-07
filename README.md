@@ -10,7 +10,7 @@ Node.js MongoDB Storefront with Express.js backend and AngularJS frontend.
   
 
 2. **Start MongoDB**
-   Make sure MongoDB is running on your local machine
+   Make sure MongoDB is running on local machine
 
 3. **Start the Server**
   
@@ -18,7 +18,7 @@ Node.js MongoDB Storefront with Express.js backend and AngularJS frontend.
   
 
 4. **Access the Application**
-   Open your browser and navigate to: `http://localhost:3000`
+   Open  browser and navigate to `http://localhost:3000`
 
 ## Project Structure
 
@@ -65,8 +65,6 @@ L11/
 - `POST /api/returns` - Create return request
 
 ## Group Member Contributions
-
-All group members contributed equally to the project with the following distribution:
 
 **Brielle Picard** – Node.js server setup and MongoDB connection, Products model and CRUD operations, products frontend page, initial integration testing, test plan development (T001, T002, T016, T020, T024).
 
